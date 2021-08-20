@@ -7,7 +7,7 @@ module.exports = {
         app:'./assets/js/script.js',
         events:'./assets/js/events.js',
         schedule: './assets/js/schedule.js',
-        tickets:'./assets/js/ticket'
+        tickets:'./assets/js/tickets.js'
     },
     output: {
         path: path.resolve(__dirname + "/dist"),
