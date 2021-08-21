@@ -1,6 +1,6 @@
 require("bootstrap");
 const createEl = require("./domMethods");
-const createLoremIpsum = require("./helpers");
+const {createLoremIpsum} = require("./helpers");
 
 // if (window.location.href.indexOf("schedule") > -1) {
 $(document).ready(function(){
