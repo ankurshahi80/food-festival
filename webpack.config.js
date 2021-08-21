@@ -2,7 +2,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 const path = require("path");
 const webpack = require("webpack");
 
-module.exports = {
+const config = {
     entry: {
         app:'./assets/js/script.js',
         events:'./assets/js/events.js',
@@ -10,8 +10,8 @@ module.exports = {
         tickets:'./assets/js/tickets.js'
     },
     output: {
-        path: path.resolve(__dirname + "/dist"),
-        filename:'[name].bundle.js'
+        filename:'[name].bundle.js',
+        path: `${__dirname}/dist`
     },
     module: {
         rules:[
@@ -23,10 +23,10 @@ module.exports = {
                         options: {
                             esModule: false,
                             name(file) {
-                                return "[path][name].[ext]"
+                                return '[path][name].[ext]';
                             },
                             publicPath: function(url) {
-                                return url.replace("../","/assets/")
+                                return url.replace('../', '/assets/');
                             }
                         }
                     },
@@ -48,3 +48,5 @@ module.exports = {
     ],
     mode: 'development'
 };
+
+module.exports = config;
